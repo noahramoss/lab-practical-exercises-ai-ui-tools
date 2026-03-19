@@ -1,0 +1,250 @@
+/* =========================================
+   1. Variables y Configuración General
+   ========================================= */
+:root {
+    --primary-color: #4a148c; 
+    --accent-color: #651fff;  
+    --text-color: #333333;
+    --bg-color: #ffffff;
+    --shadow-md: 0 4px 15px rgba(0,0,0,0.1);
+    --border-radius: 12px;
+    --transition-fast: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   2. Header y Navegación
+   ========================================= */
+header {
+    background-color: var(--bg-color);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.header-content {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se adapten si no caben */
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.highlight { color: var(--accent-color); }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition-fast);
+}
+
+.nav-links a:hover { color: var(--accent-color); }
+
+.nav-links a.nav-cta {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 50px;
+}
+
+/* =========================================
+   3. Hero Section
+   ========================================= */
+.hero {
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    /* Padding superior gigante para asegurar que la cabecera fija no lo tape */
+    padding: 160px 0 100px 0; 
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.badge {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: #1a1a1a;
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, var(--primary-color), #f50057);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: var(--transition-fast);
+    cursor: pointer;
+}
+
+.cta-button.primary { background-color: var(--accent-color); color: white; }
+.cta-button.primary:hover { background-color: var(--primary-color); }
+
+.cta-button.secondary { background-color: transparent; color: var(--accent-color); border: 2px solid var(--accent-color); }
+.cta-button.secondary:hover { background-color: #f4f4f9; }
+
+/* =========================================
+   4. Features Section (Tarjetas)
+   ========================================= */
+.features {
+    padding: 100px 20px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--bg-color);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    text-align: left;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-fast);
+    border: 1px solid #eee;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(101, 31, 255, 0.15);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    background-color: #e8eaf6;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   5. Footer
+   ========================================= */
+footer {
+    background-color: #1a1a1a;
+    color: #bbb;
+    padding: 40px 0;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* =========================================
+   6. RESPONSIVENESS (Media Queries)
+   ========================================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .hero h1 { font-size: 2.8rem; }
+    .feature-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+    .header-content { flex-direction: column; text-align: center; padding: 10px 0;}
+    .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; margin-top: 10px;}
+    
+    .hero { padding: 180px 0 60px 0; } /* Ajuste de padding para compensar el header más alto en móvil */
+    .hero h1 { font-size: 2.2rem; }
+    
+    .hero-actions { flex-direction: column; width: 100%; gap: 15px; }
+    .cta-button { width: 100%; text-align: center; }
+    
+    .feature-grid { grid-template-columns: 1fr; } /* 1 sola columna en móviles */
+    
+    .footer-content { flex-direction: column; gap: 15px; text-align: center; }
+}

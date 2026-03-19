@@ -1,0 +1,77 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #f4f4f9;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Features - Tarjetas */
+.features {
+    display: flex;
+    padding: 50px;
+    background-color: #fff;
+    /* Pista para tu arreglo: ¿Qué pasa aquí si la pantalla es muy pequeña? */
+}
+
+.card {
+    background-color: #e9ecef;
+    padding: 30px;
+    margin: 10px;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1; /* Hace que las tres tarjetas ocupen el mismo ancho */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
